@@ -7,6 +7,7 @@ namespace DDrop.Db
     {
         public DDropContext() : base("DDropDataBase")
         {
+            Database.SetInitializer(new CreateDatabaseIfNotExists<DDropContext>());
         }
 
         public DbSet<DbUser> Users { get; set; }
